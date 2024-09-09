@@ -1,0 +1,6 @@
+[submodule "task-mngr-express-sqlite"]
+	path = task-mngr-express-sqlite
+	url = https://github.com/okazakee/task-mngr-express-sqlite.git
+[submodule "task-mngr-react"]
+	path = task-mngr-react
+	url = https://github.com/okazakee/task-mngr-react.git
