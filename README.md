@@ -1,6 +1,6 @@
 # Task Management App
 
-A simple task management application built with Node.js, Express, and SQLite. This project allows you to manage tasks with states such as "done," "pending," and "on-hold."
+A simple task management application built with Vite.js, Express, and SQLite. This project allows you to manage tasks with states such as "done," "pending," and "on-hold."
 
 ## Table of Contents
 
@@ -8,8 +8,6 @@ A simple task management application built with Node.js, Express, and SQLite. Th
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Database Schema](#database-schema)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -21,8 +19,8 @@ A simple task management application built with Node.js, Express, and SQLite. Th
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/task-management-app.git
-cd task-management-app
+git clone https://github.com/Okazakee/task-mngr-fullstack.git
+cd task-mngr-fullstack
 ```
 
 ### Install Dependencies
@@ -45,7 +43,7 @@ DATABASE_URL=path/to/your/database/file
 Run the database initialization script:
 
 ```bash
-npm run init-db
+npx ts-node src/db/init.ts
 ```
 
 ## Usage
@@ -66,23 +64,23 @@ The server will start on `http://localhost:3000`.
 
 - **POST /api/tasks**
 
-  Add a new task. Requires a JSON body with `text` and `state`:
+  Add a new task. Requires a JSON body with `text` and `status`:
 
   ```json
   {
     "text": "Task description",
-    "state": "pending"
+    "status": "pending"
   }
   ```
 
 - **PUT /api/tasks/:id**
 
-  Update an existing task. Requires a JSON body with `text` and `state`:
+  Update an existing task. Requires a JSON body with `text` and `status`:
 
   ```json
   {
     "text": "Updated task description",
-    "state": "done"
+    "status": "done"
   }
   ```
 
@@ -106,4 +104,4 @@ The database schema includes a single table `tasks` with the following columns:
 
 - `id`: INTEGER PRIMARY KEY AUTOINCREMENT
 - `text`: TEXT NOT NULL
-- `state`: TEXT NOT NULL (CHECK constraint to ensure values are 'done', 'pending', or 'on-hold')
+- `status`: TEXT NOT NULL (CHECK constraint to ensure values are 'done', 'pending', or 'on-hold')
